@@ -12,10 +12,11 @@
         <h1>Fire Risk Detection System</h1>
         <h2>Instructions:</h2>
         <div class="dropdown">
-            <strong>Search by municipality:</strong> Use the drop-down menu on the left to choose your city. A new webpage will open, presenting detailed information on the estimated fire risk in nearby areas. You will also find predictions based on weather forecasts and other indices.
+            <strong>Search by municipality:</strong> Use the drop-down menu on the lelf to decide the municipality. A new webpage will open, presenting detailed information on the current fire risk. You will also find predictions based on weather forecasts for the next 5 days. <i>Works with real data!</i>
+        
         </div>
         <div class="real-time">
-            <strong>Real-Time Alerts:</strong> On the right side of this page, you see a dynamically updated list of places with high and extreme fire risk. This information is refreshed in real time with streaming data from local sensors.
+            <strong>Real-Time Alerts:</strong> On the right side of this page, you see a dynamically updated list of places with high and extreme fire risk. This information is refreshed in real time with streaming data from local sensors. <i>Works with mock-up data</i>
             <p>Stay informed and stay safe!</p>
             <p style="text-align: right;"> Group 12 </p>
         </div>    </div>
@@ -71,6 +72,7 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <p> If empty, refresh after 20sec, data are on their way! </p>
         </div>
 
     </div>

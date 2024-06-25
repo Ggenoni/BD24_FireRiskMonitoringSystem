@@ -136,5 +136,5 @@ if __name__ == "__main__":
 
     while True:
         process_and_publish_data()
-        logger.info("Sleeping for 60 seconds")
+        logger.info("Sleeping for 20 seconds")
         time.sleep(20)

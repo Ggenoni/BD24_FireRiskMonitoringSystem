@@ -57,8 +57,8 @@ This project was created by group 12, consisting of:
  - Gaudenzia Genoni - [@Ggenoni](https://github.com/Ggenoni)
 
 
-mainfolder/
-|-- UserInterface
-|     |  
-|
-|
+
+---
+### Need some help?
+We now, as students is is not always easy to navigate the word of Big Data. You may encounter some issues running this project, but we have your back covered. Here there are some helpful tips to chek if everything is running correclty, step by step. Do not desperate: one day wou will be able do code a system like this, maybe even better!
+
