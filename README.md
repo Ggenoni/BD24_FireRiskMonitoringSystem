@@ -20,6 +20,7 @@ These components communicate through an MQTT message queue.
 - **Flask** (Python framework): Used to develop the User Interface, providing an interactive web application for users to input and view data.
 - **MQTT (Paho-MQTT)**: Used for message queuing and communication between different components of the system.
 
+[System Architecture](images/system_architecture.png)
 ### Project Structure
 
 The repository is organized as follows:
