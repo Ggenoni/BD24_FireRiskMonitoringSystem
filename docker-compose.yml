@@ -1,0 +1,66 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: bdproject-mqtt-mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - bdproject-network
+
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: bdproject-mqtt-mosquitto
+    ports:
+      - "1883:1883"
+    networks:
+      - bdproject-network
+    volumes:
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+  data_fetcher:
+    build:
+      context: ./data_fetcher
+      dockerfile: Dockerfile
+    container_name: bdproject-mqtt-data_fetcher
+    networks:
+      - bdproject-network
+    depends_on:
+      - mosquitto
+
+  data_processor:
+    build:
+      context: ./data_processor
+      dockerfile: Dockerfile
+    container_name: bdproject-mqtt-data_processor
+    networks:
+      - bdproject-network
+    depends_on:
+      - mosquitto
+
+  spark_streaming:
+    build:
+      context: ./spark_streaming
+      dockerfile: Dockerfile
+    container_name: bdproject-mqtt-spark-streaming
+    depends_on:
+      - mosquitto
+      - mongo
+    networks:
+      - bdproject-network
+
+  user_interface:
+    build:
+      context: ./UserInterface
+      dockerfile: Dockerfile
+    container_name: bdproject-mqtt-user_interface
+    ports:
+      - "5000:5000"
+    depends_on:
+      - data_processor
+    networks:
+      - bdproject-network
+
+networks:
+  bdproject-network:
+    driver: bridge
