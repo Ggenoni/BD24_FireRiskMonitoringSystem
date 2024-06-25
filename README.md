@@ -31,11 +31,13 @@ This project was created by group 12, consisting of:
 If you are still a student, like us, it is not always easy to navigate the world of Big Data. You may encounter some issues running this project, but we've got your back. Here are some helpful tips to check if everything is running correctly, step by step. Do not despair: one day you will be able to code a system like this, maybe even better!
 
 IS MQTT WORKING?
-With the following code, you can subscribe to topics, send messages, and check if everything is working.   ```powershell
-   #Access to container Mosquitto
-   docker exec -it bdproject-mqtt-mosquitto /bin/sh
-
-   #Subscribe to the topic you want to check
+With the following code, you can subscribe to topics, send messages, and check if everything is working.   ```
+Access to container Mosquitto
+```
+   docker exec -it [name_of_container_mosquitto] /bin/sh
+```
+Subscribe to the topic you want to check
+```
    mosquitto_sub -h localhost -t "city/select"
    mosquitto_sub -h localhost -t "city/data_raw"
    mosquitto_sub -h localhost -t "city/data_filtered"
