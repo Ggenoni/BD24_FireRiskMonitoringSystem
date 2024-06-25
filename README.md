@@ -46,7 +46,8 @@ Subscribe to the topic you want to check
    mosquitto_sub -h localhost -t "city/synthetic_data"
 ```
 
-HOW DO I ACCESS MONGODB?
+##### HOW DO I ACCESS MONGODB?
+
 1. Access the MongoDB Container
 ```sh
 docker exec -it bdproject-mqtt-mongo-1 mongosh
@@ -72,7 +73,8 @@ db.data_raw.find().pretty()
 db.weather_data.find().pretty()
 ```
 
-ARE CONTAINERS WORKING?
+##### ARE CONTAINERS WORKING?
+
 Check the status of containers:
 ```
 docker ps -a
@@ -83,7 +85,8 @@ docker-compose logs -f [container_name]
 ```
 
 
-IS CODE INSIDE CONTAINER WORKING?
+##### IS THE CODE INSIDE CONTAINER WORKING?
+
 Access to the powershell of the container
 ```
 docker run -it [container_name] /bin/sh
